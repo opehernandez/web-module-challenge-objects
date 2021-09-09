@@ -171,10 +171,10 @@ Use the getReviewsByRating function below to do the following:
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]
 */
-
+// iterate
  function getReviewByRating(arr, rating) {
     for (let i=0;i<arr.length;i++) {
-      
+
     }
   }
 
