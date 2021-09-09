@@ -172,11 +172,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 // iterate
- function getReviewByRating(arr, rating) {
-    for (let i=0;i<arr.length;i++) {
-
-    }
-  }
+function getReviewByRating(arr, rating) {
+  let myArr = [];
+  let myRating = Math.floor(rating);
+   for (let i=0;i<arr.length;i++) {
+     if(arr[i].rating >= Math.floor(myRating + 0.1) && arr[i].rating < Math.ceil(myRating + 0.1)) {
+       myArr.push(arr[i]);
+     }
+   }
+   return myArr;
+ } // this took me a long time to figure out, tested it with different ratings inputs, and worked with all
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -192,9 +197,19 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(arr) {
+  let myArr = [];
+  for (let i=0;i<arr.length;i++) {
+    if (arr[i].feedback.split(" ").length > 15) {
+      console.log("counting");
+       myArr.push(arr[i]);
+
+    }
   }
+  console.log(myArr);
+  return myArr;
+}
+getLongReviews(reviews);
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -215,10 +230,20 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(distance) {
+  
+  const car = {
+    odometer: distance,
+    drive: function(distance) {
+      console.log("im running")
+      return this.odometer += distance;
+    }
+  }
+console.log(car.drive(distance));
+return car;
 }
+    
+
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
